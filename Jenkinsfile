@@ -1,13 +1,18 @@
 pipeline {
+    agent any // REQUIRED: Tells Jenkins to run on any available agent
+
     stages {
         stage('Build') {
             steps {
-                script {
-                    // Build the project
-                    py setup.py
-                }
+                // Build the project using a shell step
+                // Use 'sh' for Linux/macOS or 'bat' for Windows
+                // Adjust the command as needed (e.g., 'python setup.py build')
+                sh 'py setup.py build'
+                // If on Windows, you might prefer:
+                // bat 'py setup.py build'
+                // Or if 'python' is directly available:
+                // sh 'python setup.py build'
             }
         }
-        
     }
 }
