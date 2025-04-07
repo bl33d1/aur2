@@ -7,7 +7,7 @@ pipeline {
                 // Build the project using a shell step
                 // Use 'sh' for Linux/macOS or 'bat' for Windows
                 // Adjust the command as needed (e.g., 'python setup.py build')
-                sh 'java setup.py'
+                sh 'python setup.py'
                 // If on Windows, you might prefer:
                 // bat 'py setup.py build'sf
                 // Or if 'python' is directly availabl e:
